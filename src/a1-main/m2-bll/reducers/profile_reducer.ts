@@ -6,7 +6,7 @@ type ActionsType =
 
 const initialState = {}
 
-export const loginReducer = (state = initialState, action: ActionsType)  => {
+export const profileReducer = (state = initialState, action: ActionsType)  => {
   switch (action.type) {
     case 'FAKE':
       return {...state}

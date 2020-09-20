@@ -1,18 +1,22 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import {fakeReducer} from "./reducers/login_reducer";
+import {loginReducer} from "./reducers/login_reducer";
+import {signupReducer} from "./reducers/signup_reducer";
+import {passwordRestoreReducer} from "./reducers/passwordRestore_reducer";
+import {newPasswordReducer} from "./reducers/newPassword_reducer";
+import {profileReducer} from "./reducers/profile_reducer";
 
-// объединяя reducer-ы с помощью combineReducers,
-// мы задаём структуру нашего единственного объекта-состояния
 const rootReducer = combineReducers({
-  fake: fakeReducer,
+  login: loginReducer,
+  registration: signupReducer,
+  restorePassword: passwordRestoreReducer,
+  newPassword: newPasswordReducer,
+  profile: profileReducer,
 })
-// непосредственно создаём store
+
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 
-// определить автоматически тип всего объекта состояния
 export type AppRootStateType = ReturnType<typeof rootReducer>
 
-// а это, чтобы можно было в консоли браузера обращаться к store в любой момент
 // @ts-ignore
 window.store = store;

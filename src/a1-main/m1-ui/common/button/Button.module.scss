@@ -1,0 +1,10 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$textColor: black;
+$borderAndLabelColor: #9b9b9b;
+
+.btn {
+  background-color: $secondary;
+  border-radius: 10px;
+  box-sizing: content-box;
+}

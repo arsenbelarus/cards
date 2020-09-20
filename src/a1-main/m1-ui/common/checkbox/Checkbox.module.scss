@@ -1,0 +1,46 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$textColor: black;
+$borderAndLabelColor: #9b9b9b;
+
+
+input[type=checkbox].cssCheckbox {
+    position:absolute;
+    z-index:-1000;
+    left:-1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height:1px;
+    width:1px;
+    margin:-1px;
+    padding:0;
+    border:0;
+}
+
+input[type=checkbox].cssCheckbox + label.cssLabel {
+    margin: 5px;
+    padding-left:33px;
+    height:28px;
+    display:inline-block;
+    line-height:28px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:28px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+input[type=checkbox].cssCheckbox:checked + label.cssLabel {
+    background-position: 0 -28px;
+}
+label.cssLabel {
+    background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_d3637c26b7bff4db3158e6ce16569a9e.png);
+    color: $textColor;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

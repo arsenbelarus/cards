@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 import {HashRouter} from "react-router-dom";
-import {Input} from "./common/input/Input";
+import {Main} from "./Main";
+import {NavBar} from "./NavBar";
 
 const App = () => {
     return (
         <div>
             <HashRouter>
-                {/*<Main/>*/}
-                    <Input label={"Enter your e-mail"}/>
+              <NavBar/>
+              <Main/>
             </HashRouter>
         </div>
     );
