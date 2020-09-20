@@ -11,7 +11,6 @@ export const Input: FC<InputPropsType> = ({name, label, ...rest}) => {
         <div className={styles.form__group}>
             <input type={"input"} className={styles.form__field} placeholder={label} name={name} id={name} {...rest}/>
             <label htmlFor={name} className={styles.form__label}>{label}</label>
-            <h1>Проверка</h1>
         </div>
     )
 }
