@@ -1,19 +1,36 @@
 import {Dispatch} from "redux";
 import {AppRootStateType} from "../store";
+import {LoginResponseType} from "../../m3-dal/login-api";
 
 type ActionsType =
-  | ReturnType<typeof fakeAC>
+  | ReturnType<typeof setProfileAfterLoginAC>
+  | ReturnType<typeof setProfileAfterLogOutAC>
 
-const initialState = {}
+const initialState: LoginResponseType = {
+  avatar: "",
+  email: null,
+  created: null,
+  isAdmin: null,
+  name: null,
+  publicCardPacksCount: null,
+  rememberMe: null,
+  token: "",
+  tokenDeathTime: null,
+  updated: null,
+  verified: null
+}
 
-export const profileReducer = (state = initialState, action: ActionsType)  => {
+export const profileReducer = (state: typeof initialState = initialState, action: ActionsType)  => {
   switch (action.type) {
-    case 'FAKE':
-      return {...state}
+    case 'SET-PROFILE':
+      return {...state, ...action.payload}
+    case "DELETE-PROFILE":
+      return {...state, ...action.payload}
     default:
       return state;
   }
 }
 
-export const fakeAC = () => ({type: 'FAKE'} as const)
+export const setProfileAfterLoginAC = (payload: LoginResponseType) => ({type: 'SET-PROFILE', payload} as const)
+export const setProfileAfterLogOutAC = (payload: LoginResponseType) => ({type: 'DELETE-PROFILE', payload} as const)
 

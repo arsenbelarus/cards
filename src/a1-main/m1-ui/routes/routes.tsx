@@ -11,7 +11,7 @@ import {Error404Page} from "../../../a2-features/f0-error404/Error404Page";
 export const Routes = () => {
   return (
     <Switch>
-      <Route exact path={'/'} render={() => <Redirect to={RouterPathEnum.LOGIN}/>}/>
+      <Route exact path={'/'} render={() => <Redirect to={RouterPathEnum.PROFILE}/>}/>
       <Route exact path={RouterPathEnum.LOGIN} render={() => <LoginPage />}/>
       <Route exact path={RouterPathEnum.NEW_PASSWORD} render={() => <NewPasswordPage />}/>
       <Route exact path={RouterPathEnum.REGISTRATION} render={() => <RegistrationPage />}/>
