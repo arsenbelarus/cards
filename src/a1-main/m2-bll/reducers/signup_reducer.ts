@@ -34,9 +34,13 @@ export const registrationTC = (data: registrationType) =>
 
   projectRegister.registration(data)
       .then((res)=>{
+if (res.status === 201){
+    dispatch(registrationAC(true))
 
-          dispatch(registrationAC(true))
-          dispatch(setAppStatusAC('succeeded'))
+} else {
+    dispatch(registrationAC(false))
+    dispatch(setAppStatusAC('failed'))
+}
       })
       .catch((e)=>{
         const error = e.response

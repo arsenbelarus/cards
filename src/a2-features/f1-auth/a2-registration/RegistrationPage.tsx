@@ -108,7 +108,7 @@ export const RegistrationPage = () => {
                 </div>
                 <Button name={'Sign in'}
                         // onClick={butonHandler}
-                    disabled={false}
+                    disabled={status === 'loading'}
                 />
                 <div>
                     <span>register</span>
