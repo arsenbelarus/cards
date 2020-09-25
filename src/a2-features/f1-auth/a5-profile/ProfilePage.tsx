@@ -9,7 +9,6 @@ import {RouterPathEnum} from "../../../a1-main/m1-ui/routes/routerPathsEnum";
 
 
 export const ProfilePage = () => {
-  debugger
   const profileData = useSelector<AppRootStateType, LoginResponseType>(state => state.profile)
   const isLoggedIn = useSelector<AppRootStateType, boolean>(state => state.login.isLoggedIn)
   const dispatch = useDispatch()

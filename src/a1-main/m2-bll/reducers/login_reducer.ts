@@ -22,7 +22,6 @@ export const loginReducer = (state: initialStateType = initialState, action: Act
 export const setIsLoggedInAC = (isLoggedIn: boolean) => ({type: 'SET-IS-LOGGED-IN', isLoggedIn} as const)
 
 export const loginTC = (data: LoginParamsType) => (dispatch: Dispatch) => {
-  debugger
   //dispatch(setAppStatusAC('loading'))
   authAPI.login(data)
     .then(res => {
