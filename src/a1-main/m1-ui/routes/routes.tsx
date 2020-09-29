@@ -9,16 +9,16 @@ import {ProfilePage} from "../../../a2-features/f1-auth/a5-profile/ProfilePage";
 import {Error404Page} from "../../../a2-features/f0-error404/Error404Page";
 
 export const Routes = () => {
-  return (
-    <Switch>
-      <Route exact path={'/'} render={() => <Redirect to={RouterPathEnum.PROFILE}/>}/>
-      <Route exact path={RouterPathEnum.LOGIN} render={() => <LoginPage />}/>
-      <Route exact path={RouterPathEnum.NEW_PASSWORD} render={() => <NewPasswordPage />}/>
-      <Route exact path={RouterPathEnum.REGISTRATION} render={() => <RegistrationPage />}/>
-      <Route exact path={RouterPathEnum.RESTORE_PASSWORD} render={() => <RestorePage />}/>
-      <Route exact path={RouterPathEnum.PROFILE} render={() => <ProfilePage />}/>
-      <Route path={'*'} render={() => <Error404Page />}/>
-    </Switch>
-  )
+    return (
+        <Switch>
+            <Route exact path={'/'} render={() => <Redirect to={RouterPathEnum.PROFILE}/>}/>
+            <Route exact path={RouterPathEnum.LOGIN} render={() => <LoginPage/>}/>
+            <Route exact path={RouterPathEnum.NEW_PASSWORD + "/:id"} render={() => <NewPasswordPage/>}/>
+            <Route exact path={RouterPathEnum.REGISTRATION} render={() => <RegistrationPage/>}/>
+            <Route exact path={RouterPathEnum.RESTORE_PASSWORD} render={() => <RestorePage/>}/>
+            <Route exact path={RouterPathEnum.PROFILE} render={() => <ProfilePage/>}/>
+            <Route path={'*'} render={() => <Error404Page/>}/>
+        </Switch>
+    )
 }
 
